@@ -22,19 +22,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
-import androidx.compose.material.Text
-import androidx.compose.material.Surface
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
@@ -163,27 +162,17 @@ fun MainActivityUI() {
             visible = countDownTimerVisibility.value,
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
-                .wrapContentWidth()
-                .wrapContentHeight(),
         ) {
-            Row(
-                modifier = Modifier
-                    .wrapContentHeight()
-                    .wrapContentWidth()
-            ) {
+            Row {
                 Column(
-                    modifier = Modifier
-                        .wrapContentHeight()
-                        .wrapContentWidth()
+                    modifier = Modifier.wrapContentSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
                         text = "Hours",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .wrapContentHeight()
-                            .wrapContentWidth()
-                            .align(Alignment.CenterHorizontally)
+                        modifier = Modifier.wrapContentSize()
                     )
 
                     Spacer(modifier = Modifier.height(5.dp))
@@ -192,28 +181,17 @@ fun MainActivityUI() {
                         text = countdownHours.value,
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .wrapContentHeight()
-                            .wrapContentWidth()
-                            .align(Alignment.CenterHorizontally)
+                        modifier = Modifier.wrapContentSize()
                     )
                 }
 
                 Spacer(modifier = Modifier.width(20.dp))
 
-                Column(
-                    modifier = Modifier
-                        .wrapContentHeight()
-                        .wrapContentWidth()
-                ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         text = "Minutes",
                         fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .wrapContentHeight()
-                            .wrapContentWidth()
-                            .align(Alignment.CenterHorizontally)
+                        fontWeight = FontWeight.Bold
                     )
 
                     Spacer(modifier = Modifier.height(5.dp))
@@ -221,29 +199,17 @@ fun MainActivityUI() {
                     Text(
                         text = countdownMinutes.value,
                         fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .wrapContentHeight()
-                            .wrapContentWidth()
-                            .align(Alignment.CenterHorizontally)
+                        fontWeight = FontWeight.Bold
                     )
                 }
 
                 Spacer(modifier = Modifier.width(20.dp))
 
-                Column(
-                    modifier = Modifier
-                        .wrapContentHeight()
-                        .wrapContentWidth()
-                ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         text = "Seconds",
                         fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .wrapContentHeight()
-                            .wrapContentWidth()
-                            .align(Alignment.CenterHorizontally)
+                        fontWeight = FontWeight.Bold
                     )
 
                     Spacer(modifier = Modifier.height(5.dp))
@@ -251,11 +217,7 @@ fun MainActivityUI() {
                     Text(
                         text = countdownSeconds.value,
                         fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .wrapContentHeight()
-                            .wrapContentWidth()
-                            .align(Alignment.CenterHorizontally)
+                        fontWeight = FontWeight.Bold
                     )
                 }
             }
@@ -296,7 +258,6 @@ fun setCountdownTimer() {
 
                 override fun onFinish() {
                 }
-
             }
             countDownTimer.start()
         } else {
