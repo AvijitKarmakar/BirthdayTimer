@@ -171,8 +171,7 @@ fun MainActivityUI() {
                     Text(
                         text = "Hours",
                         fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.wrapContentSize()
+                        fontWeight = FontWeight.Bold
                     )
 
                     Spacer(modifier = Modifier.height(5.dp))
@@ -180,8 +179,7 @@ fun MainActivityUI() {
                     Text(
                         text = countdownHours.value,
                         fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.wrapContentSize()
+                        fontWeight = FontWeight.Bold
                     )
                 }
 
