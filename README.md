@@ -6,11 +6,9 @@ It's a Birthday Reminder App using Jetpack Compose for submission in #AndroidDev
 ## :camera_flash: Screenshots
 <img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">
 
-![Video](/results/video.mp4)
-
 ## License
 ```
-Copyright 2020 The Android Open Source Project
+Copyright 2020 Avijit Karmakar
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
